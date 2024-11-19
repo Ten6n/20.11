@@ -1,0 +1,122 @@
+<20_11 html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng 20/11</title>
+    <style>
+        /* Phần nền và tổng thể */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe0b3, #ffcccb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Hộp thiệp */
+        .card {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Tiêu đề */
+        h1 {
+            color: #ff6f61;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Nội dung */
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Phần ký tên */
+        .signature {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* Hiệu ứng fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Trái tim bay */
+        .floating-heart {
+            position: absolute;
+            color: #ff6f61;
+            font-size: 24px;
+            animation: floatUp 5s infinite ease-in-out;
+        }
+
+        /* Hiệu ứng trái tim bay lên */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-600px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hộp thiệp -->
+    <div class="card">
+        <h1>🌟 Chúc Mừng 20/11 🌟</h1>
+        <p>Kính gửi thầy/cô kính yêu,</p>
+        <p>Nhân ngày Nhà Giáo Việt Nam, em xin chúc thầy/cô sức khỏe, hạnh phúc và thành công trên con đường sự nghiệp!</p>
+        <p>Chúng em luôn trân trọng những bài học và sự tận tụy của thầy/cô.</p>
+        <p class="signature">Trân trọng, [Tên của bạn]</p>
+    </div>
+
+    <!-- JavaScript cho trái tim bay -->
+    <script>
+        // Hàm tạo trái tim bay
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.textContent = '❤️'; // Biểu tượng trái tim
+            heart.className = 'floating-heart';
+
+            // Vị trí trái tim ngẫu nhiên theo chiều ngang
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            // Thời gian bay ngẫu nhiên
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+
+            document.body.appendChild(heart);
+
+            // Xóa trái tim sau 5 giây để tránh tràn bộ nhớ
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tạo trái tim mỗi 500ms
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
